@@ -19,3 +19,6 @@ Este projeto é baseado no trabalho de mcnamee. Agradecimentos especiais pela in
 <h5 align="center">
   Made with 💜 by <a href="https://github.com/nullbyte-s/">nullbyte-s</a><br>
   <a href="https://choosealicense.com/licenses/mit/"><br>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg">
+  </a>
+</h5>
