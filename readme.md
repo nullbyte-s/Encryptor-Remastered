@@ -1,4 +1,4 @@
-# <img src="assets/img/icon.svg" alt="Icon" width="30" height="30"> Encryptor Remastered <img src="assets/img/icon.svg" alt="Icon" width="30" height="30">
+<h1 align="center"><img src="assets/img/icon.svg" alt="Icon" width="30" height="30"> Encryptor Remastered <img src="assets/img/icon.svg" alt="Icon" width="30" height="30"></h1>
 
 ## Descrição
 
@@ -7,6 +7,7 @@
 ## Demonstração
 
 Você pode acessar a demonstração do projeto [aqui](https://nullbyte-s.github.io/Encryptor-Remastered/).
+
 
 ## Créditos
 Este projeto é baseado no trabalho de mcnamee. Agradecimentos especiais pela inspiração e pela base fornecida para este projeto.
