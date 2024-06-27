@@ -8,9 +8,6 @@
 
 Você pode acessar a demonstração do projeto [aqui](https://nullbyte-s.github.io/Encryptor-Remastered/).
 
-## Licença
-Este projeto está licenciado sob a Licença MIT.
-
 ## Créditos
 Este projeto é baseado no trabalho de mcnamee. Agradecimentos especiais pela inspiração e pela base fornecida para este projeto.
 
