@@ -6,7 +6,7 @@
 
 ## Demonstração
 
-Você pode acessar a demonstração do projeto [aqui](https://nullbyte-s.github.io/encryptor-remastered/).
+Você pode acessar a demonstração do projeto [aqui](https://nullbyte-s.github.io/Encryptor-Remastered/).
 
 ## Licença
 Este projeto está licenciado sob a Licença MIT.
