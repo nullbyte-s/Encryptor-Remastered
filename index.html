@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Encryptor</title>
+
+  <link rel="stylesheet" href="css/foundation.min.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml" />
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/bundle.js"></script>
+  <script src="js/pouchdb.min.js"></script>
+  <script src="js/crypto-js.min.js"></script>
+
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="hidden grid-x" id="encryptor" style="margin-top: 2px;">
+      <div class="cell small-8 small-offset-2">
+        <div id="error-message-password" class="callout alert hide"></div>
+        <form id="encryptForm">
+          <ul class="tabs" data-tabs id="options-tabs" style="margin-top: 50px;">
+            <li class="tabs-title is-active">
+              <a href="#encryptTab" aria-selected="true">Criptografar</a>
+            </li>
+            <li class="tabs-title">
+              <a href="#decryptTab">Descriptografar</a>
+            </li>
+          </ul>
+          <div class="tabs-content" data-tabs-content="options-tabs">
+            <div class="tabs-panel is-active" id="encryptTab">
+              <label for="encrypt">Criptografe o seguinte:</label>
+              <textarea name="encrypt" id="encrypt" rows="8"></textarea>
+              <input type="submit" class="button" value="Criptografar" />
+              <a class="button" onclick="pasteFromClipboard()">Colar</a>
+              <label for="encrypted">Resultado:</label>
+              <textarea id="encrypted" rows="8"></textarea>
+              <a id="copyButton1" class="button" onclick="copyToClipboard('encrypted');">Copiar</a>
+            </div>
+            <div class="tabs-panel" id="decryptTab">
+              <label for="decrypt">Descriptografe o seguinte:</label>
+              <textarea name="decrypt" id="decrypt" rows="8"></textarea>
+              <input type="submit" class="button" value="Descriptografar" />
+              <a class="button" onclick="pasteFromClipboard()">Colar</a>
+              <label for="decrypted">Resultado:</label>
+              <textarea id="decrypted" rows="8"></textarea>
+              <a id="copyButton2" class="button" onclick="copyToClipboard('decrypted');">Copiar</a>
+            </div>
+            <a class="btn-reset" onclick="removeStoredData()">Resetar senha</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <dialog class="block-selection" id="loginModal">
+    <h5>🔑 <b>Senha da Criptografia</b></h5>
+    <div class="modal-body">
+      <div class='alert-info' role='alert'>Defina uma senha para acessar o serviço</div>
+      <form onkeydown="return event.key != 'Enter';">
+        <div class="input-group">
+          <input type="password" id="lpwd" class="form-control" placeholder="Senha" aria-label="Senha" autofocus>
+        </div>
+      </form>
+    </div>
+    <div class="div-centered">
+      <button class="button" onclick="loginToServer()" id="lbtn">Salvar</button>
+    </div>
+  </dialog>
+
+  <script src="js/clipboardManager.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

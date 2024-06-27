@@ -1,0 +1,102 @@
+@charset "UTF-8";
+:root {
+	--background-gradient: linear-gradient(to bottom, rgba(194,194,202,0.5), rgba(80,80,80,0.5))
+}
+
+body {
+	background-color: #212529;
+	color: #b2b86a
+}
+
+label {
+	color: #83aeca
+}
+
+#encryptForm, #loginModal {
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.5)
+}
+
+#loginModal {
+	background: linear-gradient(to top, rgba(208,242,247,0.9), rgba(160,202,171,0.9))
+}
+
+.alert-info {
+	background-color: #ebebebdc;
+	padding: 20px;
+	margin-bottom: 15px;
+	border-radius: 4px;
+	opacity: 0.8;
+	transition: opacity 0.6s;
+	color: rgb(0,0,0)
+}
+
+.alert-info:hover {
+	background-color: #ebebebec;
+	opacity: 0.9
+}
+
+.block-selection {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.btn-reset {
+	border: none;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 10px 30px;
+	display: inline-block;
+	margin: 15px 15px;
+    max-width: fit-content;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: 14;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	justify-content: center;
+	align-items: center;
+	background: #26cc70ee;
+	color: #fff
+}
+
+.btn-reset:hover {
+	background: green;
+    color: #fff
+}
+
+.button-copied {
+	background-color: green;
+	color: white;
+	transition: background-color
+}
+
+.div-centered {
+	display: grid;
+	place-items: center
+}
+
+.hidden {
+	display: none
+}
+
+.tabs {
+	background: var(--background-gradient)
+}
+
+.tabs-content {
+	width: 100%;
+	border: none;
+	background: var(--background-gradient)
+}
+
+.tabs-title, textarea, textarea:focus {
+	background-color: rgba(36,35,35,0.4);
+	color: lightblue
+}
