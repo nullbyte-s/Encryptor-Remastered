@@ -1,6 +1,4 @@
-# Encryptor Remastered
-
-![Encryptor Remastered](assets/img/icon.svg)
+# <img src="assets/img/icon.svg" alt="Icon" width="30" height="30"> Encryptor Remastered <img src="assets/img/icon.svg" alt="Icon" width="30" height="30">
 
 ## Descrição
 
