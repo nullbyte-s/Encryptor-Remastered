@@ -22,7 +22,7 @@ label {
 
 #loginModal {
 	background: rgb(15, 45, 50);
-	background: linear-gradient(180deg, rgba(20, 227, 199, 0.5) 0%, rgba(9, 112, 121, 0.5) 35%, rgba(0, 191, 255, 0.500437675070028) 100%);
+	background: linear-gradient(180deg, rgba(20, 227, 199, 0.5) 0%, rgba(9, 112, 121, 0.5) 35%, rgba(0, 191, 255, 0.500437675070028) 100%)
 }
 
 #loginModal h4 {
@@ -42,12 +42,12 @@ label {
 	background-clip: text;
 	-webkit-background-clip: text;
     -webkit-background-clip: border-box;
-    -moz-background-clip: border-box;
+    -moz-background-clip: border-box
 }
 
 #loginModal h4::before {
     z-index: -1;
-	text-shadow: -1px -1px 0 var(--shadow-color), 1px -1px 0 var(--shadow-color), -2px 2px 0 var(--shadow-color), 1px 1px 0 var(--shadow-color);
+	text-shadow: -1px -1px 0 var(--shadow-color), 1px -1px 0 var(--shadow-color), -2px 2px 0 var(--shadow-color), 1px 1px 0 var(--shadow-color)
 }
 
 .alert-info {
