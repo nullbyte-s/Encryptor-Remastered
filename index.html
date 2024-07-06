@@ -60,22 +60,38 @@
   </div>
 
   <dialog class="block-selection" id="loginModal">
-    <h5>🔑 <b>Senha da Criptografia</b></h5>
-    <div class="modal-body">
+    <h4 class="centered">Senha da Criptografia</h4>
+    <div class="container modal-body">
       <div class='alert-info' role='alert'>Defina uma senha para acessar o serviço</div>
-      <form onkeydown="return event.key != 'Enter';">
-        <div class="input-group">
-          <input type="password" id="lpwd" class="form-control" placeholder="Senha" aria-label="Senha" autofocus>
-        </div>
-      </form>
-    </div>
-    <div class="div-centered">
-      <button class="button" onclick="loginToServer()" id="lbtn">Salvar</button>
+      <div class="inputArea password-field input-group" onkeydown="return event.key != 'Enter';">
+        <input type="password" id="lpwd" class="form-control" placeholder="Senha" aria-label="Senha" autofocus>
+        <input class="clear" type="text" placeholder="Exibir senha">
+        <button>
+          <svg viewBox="0 0 21 21">
+            <circle class="eye" cx="10.5" cy="10.5" r="2.25" />
+            <path class="top" d="M2 10.5C2 10.5 6.43686 5.5 10.5 5.5C14.5631 5.5 19 10.5 19 10.5" />
+            <path class="bottom" d="M2 10.5C2 10.5 6.43686 15.5 10.5 15.5C14.5631 15.5 19 10.5 19 10.5" />
+            <g class="lashes">
+              <path d="M10.5 15.5V18" />
+              <path d="M14.5 14.5L15.25 17" />
+              <path d="M6.5 14.5L5.75 17" />
+              <path d="M3.5 12.5L2 15" />
+              <path d="M17.5 12.5L19 15" />
+            </g>
+          </svg>
+        </button>
+      </div>
+      <div class="centered">
+        <button class="button" onclick="loginToServer()" id="lbtn">Salvar</button>
+      </div>
+      <div class="strengthMeter"></div>
     </div>
   </dialog>
 
   <script src="js/clipboardManager.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/anime.min.js"></script>
+  <script src="js/pwdStyler.js"></script>
 </body>
 
 </html>

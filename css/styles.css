@@ -1,9 +1,12 @@
 @charset "UTF-8";
+
 :root {
-	--background-gradient: linear-gradient(to bottom, rgba(194,194,202,0.5), rgba(80,80,80,0.5))
+	--background-gradient: linear-gradient(to bottom, rgba(194, 194, 202, 0.5), rgba(80, 80, 80, 0.5));
+	--shadow-color: #353535;
 }
 
 body {
+	min-height: 80vh;
 	background-color: #212529;
 	color: #b2b86a
 }
@@ -12,12 +15,25 @@ label {
 	color: #83aeca
 }
 
-#encryptForm, #loginModal {
-	box-shadow: 2px 2px 8px rgba(0,0,0,0.5)
+#encryptForm,
+#loginModal {
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5)
 }
 
 #loginModal {
-	background: linear-gradient(to top, rgba(208,242,247,0.9), rgba(160,202,171,0.9))
+	background: rgb(15, 45, 50);
+	background: linear-gradient(180deg, rgba(20, 227, 199, 0.5) 0%, rgba(9, 112, 121, 0.5) 35%, rgba(0, 191, 255, 0.500437675070028) 100%);
+}
+
+#loginModal h4 {
+	background-color: #353535;
+	position: relative;
+	color: transparent;
+	font-weight: bold;
+	background-image: linear-gradient(0deg, #9b00c2b2, #cf0034d0);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
 }
 
 .alert-info {
@@ -27,7 +43,7 @@ label {
 	border-radius: 4px;
 	opacity: 0.8;
 	transition: opacity 0.6s;
-	color: rgb(0,0,0)
+	color: rgb(0, 0, 0)
 }
 
 .alert-info:hover {
@@ -51,7 +67,7 @@ label {
 	padding: 10px 30px;
 	display: inline-block;
 	margin: 15px 15px;
-    max-width: fit-content;
+	max-width: fit-content;
 	left: 50%;
 	transform: translateX(-50%);
 	font-weight: 14;
@@ -68,7 +84,7 @@ label {
 
 .btn-reset:hover {
 	background: green;
-    color: #fff
+	color: #fff
 }
 
 .button-copied {
@@ -77,7 +93,7 @@ label {
 	transition: background-color
 }
 
-.div-centered {
+.centered {
 	display: grid;
 	place-items: center
 }
@@ -96,7 +112,272 @@ label {
 	background: var(--background-gradient)
 }
 
-.tabs-title, textarea, textarea:focus {
-	background-color: rgba(36,35,35,0.4);
+.tabs-title,
+textarea,
+textarea:focus {
+	background-color: rgba(36, 35, 35, 0.4);
 	color: lightblue
+}
+
+.container {
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 1px solid #111;
+	padding-bottom: 20px;
+	background: #222222;
+}
+
+.container .inputArea {
+	position: relative;
+	width: 100%;
+	border-radius: 7px;
+	background: #222222;
+	border: #09abc3;
+}
+
+.container .inputArea input {
+	width: 220px;
+	position: relative;
+	border-radius: 7px;
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	font-size: 1.1em;
+	color: aliceblue;
+}
+
+.container .strengthMeter {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 3px;
+	background: #222;
+}
+
+.container .strengthMeter::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 100%;
+	transition: 0.5s;
+	background: #f00;
+}
+
+.container.weak .strengthMeter::before {
+	width: 10%;
+	background: #f00;
+	filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);
+}
+
+.container.moderate .strengthMeter::before {
+	width: 70%;
+	background: #eedc3d;
+	filter: drop-shadow(0 0 5px #eedc3d) drop-shadow(0 0 10px #eedc3d) drop-shadow(0 0 20px #eedc3d);
+}
+
+.container.strong .strengthMeter::before {
+	width: 100%;
+	background: #18e605;
+	filter: drop-shadow(0 0 5px #18e605) drop-shadow(0 0 10px #18e605) drop-shadow(0 0 20px #18e605);
+}
+
+.container .strengthMeter::after {
+	position: absolute;
+	top: -45px;
+	left: 30px;
+	transition: 0.5s;
+	color: aliceblue;
+}
+
+.container.container.weak .strengthMeter::after {
+	content: "Senha fraca";
+	color: #f00;
+	filter: drop-shadow(0 0 5px#f00);
+}
+
+.container.container.container.moderate .strengthMeter::after {
+	content: "Senha moderada";
+	color: #eedc3d;
+	filter: drop-shadow(0 0 5px#eedc3d);
+}
+
+.container.container.container.container.strong .strengthMeter::after {
+	content: "Senha forte";
+	color: #18e605;
+	filter: drop-shadow(0 0 5px#18e605);
+}
+
+.password-field {
+	--c-text: #5a5a64;
+	--c-text-light: #a1a1b6;
+	--c-text-selection: #09abc3;
+	--c-background: #222222;
+	--c-background-selection: rgba(9, 171, 195, 0.15);
+	--c-border: #e2e2ed;
+	--c-border-hover: #d0d0db;
+	--c-border-active: #09abc3;
+	--c-shadow: rgba(41, 41, 86, 0.06);
+	--c-shadow-active: rgba(9, 171, 195, 0.25);
+	--eye-background: 0;
+	--eye-offset: 3px;
+	--eye-wrapper-y: 0;
+	--eye-y: 0;
+	--eye-x: 0;
+	--eye-s: 1;
+	width: 220px;
+	position: relative;
+	border-radius: 7px;
+	background: var(--c-background);
+	box-shadow: inset 0 0 0 1px var(--border, var(--c-border)),
+		0px 1px 3px var(--shadow, var(--c-shadow));
+	transition: box-shadow 0.25s;
+
+	&:hover {
+		--border: var(--c-border-hover);
+		--eye-duration: 0.05s;
+	}
+
+	&:focus-within {
+		--border: var(--c-border-active);
+		--shadow: var(--c-shadow-active);
+	}
+
+	input,
+	button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: none;
+		background: none;
+		border: none;
+		margin: 0;
+	}
+
+	input {
+		display: block;
+		font-family: inherit;
+		font-size: 16px;
+		line-height: 21px;
+		height: 45px;
+		color: var(--c-text);
+		padding: 12px 41px 12px 16px;
+		transform: translateY(var(--y, var(--default-y, 0))) translateZ(0);
+		opacity: var(--o, var(--default-o, 1));
+		pointer-events: var(--pe, var(--default-pe, auto));
+		transition: filter 0.35s, transform 0.4s, opacity 0.25s;
+
+		&::placeholder {
+			color: var(--c-text-light);
+			transition: color 0.25s;
+		}
+
+		&::selection {
+			color: var(--c-text-selection);
+			background: var(--c-background-selection);
+		}
+
+		&:focus,
+		&:hover {
+			&::placeholder {
+				color: var(--c-text);
+			}
+		}
+
+		&:not(.clear) {
+			width: 100%;
+		}
+
+		&.clear {
+			--y: var(--clear-y, 12px);
+			--o: var(--clear-o, 0);
+			--pe: var(--clear-pe, none);
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	button {
+		-webkit-tap-highlight-color: transparent;
+		cursor: pointer;
+		padding: 11px;
+		position: absolute;
+		z-index: 1;
+		right: 0;
+		top: 0;
+		transform: scale(var(--s, 1));
+		color: var(--c-text-light);
+		transition: color 0.25s, transform 0.15s;
+
+		&:hover {
+			color: var(--c-text);
+		}
+
+		&:active {
+			--s: 0.95;
+		}
+
+		svg {
+			display: block;
+			width: 23px;
+			height: 23px;
+			pointer-events: none;
+
+			.top,
+			.bottom {
+				fill: none;
+				stroke: currentColor;
+				stroke-width: 1.5px;
+				stroke-linecap: round;
+			}
+
+			.top {
+				fill: var(--c-background);
+				fill-opacity: var(--eye-background);
+			}
+
+			.eye {
+				fill: currentColor;
+				transform-origin: 10.5px 13.5px;
+				transform: translate(var(--eye-x), var(--eye-y)) scale(var(--eye-s)) translateZ(0);
+				transition: transform var(--eye-duration, 0.3s);
+			}
+
+			.lashes {
+				opacity: 0;
+				transition: opacity 0.2s ease-in-out;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.lashes path {
+				stroke: currentColor;
+				stroke-width: 1;
+				fill: none;
+			}
+		}
+	}
+
+	&.show {
+		--default-y: -12px;
+		--default-o: 0;
+		--default-pe: none;
+		--clear-y: 0;
+		--clear-o: 1;
+		--clear-pe: auto;
+	}
+}
+
+.modal-body {
+	border-radius: 10px;
 }
