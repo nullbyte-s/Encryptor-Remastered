@@ -2,7 +2,7 @@
 
 :root {
 	--background-gradient: linear-gradient(to bottom, rgba(194, 194, 202, 0.5), rgba(80, 80, 80, 0.5));
-	--shadow-color: #353535;
+	--shadow-color: #3f2108cc;
 }
 
 body {
@@ -25,12 +25,21 @@ label {
 	background: linear-gradient(180deg, rgba(20, 227, 199, 0.5) 0%, rgba(9, 112, 121, 0.5) 35%, rgba(0, 191, 255, 0.500437675070028) 100%)
 }
 
+#loginModal span,h4 {
+	font-size: 2.5rem;
+    font-family: cursive;
+    text-align: center;
+	display: inline-block;
+	max-width: fit-content;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	padding: auto;
+}
+
 #loginModal h4 {
-	font-size: 2rem;
-	font-family: serif;
-	text-align: center;
 	color: transparent;
-	background-image: linear-gradient(0deg, #e6d32ae3, #e28b08e8);
+	background-image: linear-gradient(0deg, #d85a07e0, #f0d805ea);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent
@@ -42,12 +51,41 @@ label {
 	background-clip: text;
 	-webkit-background-clip: text;
     -webkit-background-clip: border-box;
-    -moz-background-clip: border-box
+    -moz-background-clip: border-box;
+	z-index: -1
 }
 
-#loginModal h4::before {
-    z-index: -1;
-	text-shadow: -1px -1px 0 var(--shadow-color), 1px -1px 0 var(--shadow-color), -2px 2px 0 var(--shadow-color), 1px 1px 0 var(--shadow-color)
+@media (min-width: 365px) {
+	#loginModal h4::before {
+	  text-shadow: 
+		-70px -2px 3px var(--shadow-color), 
+		-70px -2px 3px var(--shadow-color), 
+		-70px 2px 3px var(--shadow-color), 
+		-70px 2px 3px var(--shadow-color);
+	}
+}
+  
+@media (max-width: 364px) {
+	#loginModal h4::before {
+	  margin-right: calc(-30px - 1vw);
+	  text-shadow: 
+		-70px -2px 3px var(--shadow-color), 
+		-70px -2px 3px var(--shadow-color), 
+		-70px 2px 3px var(--shadow-color), 
+		-70px 2px 3px var(--shadow-color);
+	}
+}
+  
+@media (max-width: 335px) {
+	#loginModal h4::before {
+	  margin-right: 8px;
+	  padding: 1px 35px;
+	  text-shadow: 
+		-38px -58px 3px var(--shadow-color), 
+		-38px -58px 3px var(--shadow-color), 
+		-38px -54px 3px var(--shadow-color), 
+		-38px -54px 3px var(--shadow-color);
+	}
 }
 
 .alert-info {
