@@ -27,14 +27,14 @@ label {
 
 #loginModal span,h4 {
 	font-size: 2.5rem;
-    font-family: cursive;
+    font: Georgia, serif;
     text-align: center;
 	display: inline-block;
 	max-width: fit-content;
 	position: relative;
-	justify-content: center;
-	align-items: center;
-	padding: auto;
+	/* justify-content: center;
+	align-items: center; */
+	/* padding: auto */
 }
 
 #loginModal h4 {
@@ -42,12 +42,16 @@ label {
 	background-image: linear-gradient(0deg, #d85a07e0, #f0d805ea);
 	background-clip: text;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent
+	-webkit-text-fill-color: transparent;
 }
 
 #loginModal h4::before, #loginModal h4::after {
     content: attr(data-text);
-    position: fixed;
+    position: absolute;
+	top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 	background-clip: text;
 	-webkit-background-clip: text;
     -webkit-background-clip: border-box;
@@ -55,38 +59,33 @@ label {
 	z-index: -1
 }
 
-@media (min-width: 365px) {
+#loginModal h4::before {
+	text-shadow: 
+		-1px -1px 3px var(--shadow-color), 
+		-1px -1px 3px var(--shadow-color), 
+		-1px 1px 3px var(--shadow-color), 
+		-1px 1px 3px var(--shadow-color);
+}
+
+/* @media (min-width: 431px) {
 	#loginModal h4::before {
-	  text-shadow: 
-		-70px -2px 3px var(--shadow-color), 
-		-70px -2px 3px var(--shadow-color), 
-		-70px 2px 3px var(--shadow-color), 
-		-70px 2px 3px var(--shadow-color);
+		text-shadow: 
+			-1px -1px 3px var(--shadow-color), 
+			-1px -1px 3px var(--shadow-color), 
+			-1px 1px 3px var(--shadow-color), 
+			-1px 1px 3px var(--shadow-color);
 	}
 }
   
-@media (max-width: 364px) {
+@media (max-width: 430px) {
 	#loginModal h4::before {
-	  margin-right: calc(-30px - 1vw);
-	  text-shadow: 
-		-70px -2px 3px var(--shadow-color), 
-		-70px -2px 3px var(--shadow-color), 
-		-70px 2px 3px var(--shadow-color), 
-		-70px 2px 3px var(--shadow-color);
+		text-shadow: 
+			-1px -1px 3px var(--shadow-color), 
+			-1px -1px 3px var(--shadow-color), 
+			-1px 1px 3px var(--shadow-color), 
+			-1px 1px 3px var(--shadow-color);
 	}
-}
-  
-@media (max-width: 335px) {
-	#loginModal h4::before {
-	  margin-right: 8px;
-	  padding: 1px 35px;
-	  text-shadow: 
-		-38px -58px 3px var(--shadow-color), 
-		-38px -58px 3px var(--shadow-color), 
-		-38px -54px 3px var(--shadow-color), 
-		-38px -54px 3px var(--shadow-color);
-	}
-}
+} */
 
 .alert-info {
 	background-color: #ebebebdc;
@@ -147,6 +146,7 @@ label {
 
 .centered {
 	display: grid;
+	margin-top: 18px;
 	place-items: center
 }
 
@@ -179,6 +179,8 @@ textarea:focus {
 	border-radius: 1px solid #111;
 	padding-bottom: 20px;
 	background: #222222;
+	position: relative;
+	overflow: hidden;
 }
 
 .container .inputArea {
@@ -200,8 +202,12 @@ textarea:focus {
 	color: aliceblue;
 }
 
+.container .inputArea.password-field {
+	position: relative;
+}
+
 .container .strengthMeter {
-	position: absolute;
+	position: relative;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -238,26 +244,28 @@ textarea:focus {
 
 .container .strengthMeter::after {
 	position: absolute;
-	top: -45px;
-	left: 30px;
+	top: 15px;
+	left: 10px;
+	width: 100%;
+	/* text-align: center; */
 	transition: 0.5s;
 	color: aliceblue;
 }
 
 .container.container.weak .strengthMeter::after {
-	content: "Senha fraca";
+	content: "Fraca";
 	color: #f00;
 	filter: drop-shadow(0 0 5px#f00);
 }
 
 .container.container.container.moderate .strengthMeter::after {
-	content: "Senha moderada";
+	content: "Média";
 	color: #eedc3d;
 	filter: drop-shadow(0 0 5px#eedc3d);
 }
 
 .container.container.container.container.strong .strengthMeter::after {
-	content: "Senha forte";
+	content: "Forte";
 	color: #18e605;
 	filter: drop-shadow(0 0 5px#18e605);
 }

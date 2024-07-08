@@ -62,7 +62,7 @@ async function storeHashedPassword(password) {
         throw err;
       }
     }
-    console.log('Senha hash armazenada com sucesso:', hashedPwd);
+    // console.log('Senha hash armazenada com sucesso:', hashedPwd);
   } catch (err) {
     console.error('Erro ao armazenar senha hash:', err);
   }
